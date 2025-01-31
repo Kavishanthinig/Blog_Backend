@@ -12,7 +12,7 @@ app.use(cors({
 
 app.use(express.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/BlogApp', {
+mongoose.connect('mongodb+srv://kavishanthinig:kavi2114@kavi.docd8.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => console.log('Connected to MongoDB'))
