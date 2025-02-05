@@ -5,14 +5,12 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const app = express();
 
-app.use(cors({
-    origin: 'http://localhost:3000',
-    credentials: true
-}));
+app.use(cors());
 
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://kavishanthinig:kavi2114@kavi.docd8.mongodb.net/', {
+mongoose.connect('mongodb+srv://kavishanthinig:kavi2114@kavi.docd8.mongodb.net/'
+, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => console.log('Connected to MongoDB'))
@@ -146,7 +144,7 @@ app.post('/blogs/create', async (req, res) => {
             author,
             category,
             externalLink,
-            comments: [], // Initialize an empty array for comments
+            comments: [], 
         });
 
         await newBlog.save();
@@ -204,8 +202,7 @@ app.delete('/blogs/delete/:id', async (req, res) => {
   }
 });
 
-
 // Start the server
 app.listen(4000, () => {
-  console.log('Server is running on port http://localhost:4000');
+  console.log('Server is running on port https://localhost:4000');
 });
